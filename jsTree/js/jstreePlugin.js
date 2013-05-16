@@ -1,13 +1,16 @@
 $.each({
-    jstreePlugin: function(data, field,other_field, options) {
+    jstreePlugin: function(field,other_field, options) {
+         
         $(field).jstree(options).delegate("a","click", function(e) {
+            //alert(other_field);
             if ($(field).jstree("is_leaf", this)) {
-                $("#eclipse_browser_form_test").val($(field).jstree('get_selected').attr('id'));
+                $(other_field).val($(field).jstree('get_selected').attr('id'));
                 $(other_field).submit();
             }
             else {
-                $("#eclipse_browser_form_test").val($(field).jstree('get_selected').attr('id'));
-                $(field).jstree("toggle_node", this);
+               // $.univ.dump(data,"console");
+                $(other_field).val($(field).jstree('get_selected').attr('id'));
+                $(field).jstree("open_node", this);
                 $(other_field).submit();
             }
         });

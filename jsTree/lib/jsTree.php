@@ -20,25 +20,24 @@ class jsTree extends \View {
 
 //dont use ID with set static source
     function setSource($src,$field,$other_field,$opts=null) {
-        $l = $this->api->add('listers/Lister_Tree', null, 'tree');
+        $l = $this->api->add('listers/Lister_Tree', null, 'tree',array('lister_tree'));
         $l->setSource($src);
         $l->setRelationFields('ids', 'parent_id');
-        $l->js(true)->univ()->jstreePlugin($src,$l,$other_field,$opts);
+//        die(var_dump($opts));
+        $l->js(true)->univ()->jstreePlugin($l,$other_field,$opts);
     }
 
     function loadIncludes() {
         $l = $this->api->locate('addons', 'jsTree', 'location');
         $this->api->pathfinder->addLocation($this->api->locate('addons', 'jsTree'), array(
-            'js' => 'js'
+            'js' => 'js','template'=>'templates'
         ))->setParent($l);
 
         $this->api->jui->addStaticStylesheet('themes/default/style', '.css', 'js');
         $this->js(true)->_load('jstreePlugin');
         $this->api->jui->addStaticInclude('jquery.hotkeys');
         $this->api->jui->addStaticInclude('jquery.jstree');
-        //$this->setElement('demo1');
     }
-
 }
 
 // public $options = array(

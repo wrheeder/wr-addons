@@ -8,7 +8,7 @@ class Layout extends \View {
         //'applyDefaultStyles' => true,
         'north'=>array('closable'=>false,'resizable'=>false,'slidable'=>false,'spacing_open'=>3,'size'=>'95'),
         'south'=>array('closable'=>false,'resizable'=>false,'slidable'=>false,'spacing_open'=>3,'size'=>'50','togglerClass'=>"myToggler"),
-        'west'=>array('initClosed'=>true,'spacing_open'=>3,'spacing_closed'=>6,'size'=>'150')
+        'west'=>array('initClosed'=>true,'spacing_open'=>3,'spacing_closed'=>6,'size'=>'210')
     );
 
     function init() {
