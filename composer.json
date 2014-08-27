@@ -1,0 +1,11 @@
+{
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/wrheeder/wr-addons"
+        }
+    ],
+    "require": {
+        "wr-rheeder/Layout": "master"
+    }
+}
