@@ -1,4 +1,5 @@
 {
+    "name": "wr-addons"
     "repositories": [
         {
             "type": "vcs",
